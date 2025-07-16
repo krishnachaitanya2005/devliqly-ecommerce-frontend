@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Razorpay Test</title>
+</head>
+<body>
+  <h2>Razorpay Payment Test</h2>
+  <input type="number" id="amount" placeholder="Enter amount (₹)" />
+  <button onclick="payNow()">Pay Now</button>
+
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  <script>
+    async function payNow() {
+
+      const token= "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4Nzc0ZWRmNmU2OGViOGJkZmJmMTU0YSIsImlhdCI6MTc1MjY0OTU2MiwiZXhwIjoxNzUyNjUwNDYyfQ._u5paQyPxfStNvhYjm4UKq5BMn11yIkZ5PGU_-Y2_XM";
+      const amount = document.getElementById("amount").value;
+
+      // 1. CALL BACKEND TO CREATE ORDER
+      
+      const res = await fetch("http://localhost:5000/api/payment/create-order", {
+        method: "POST",
+        headers: {
+    "Content-Type": "application/json",
+    "Authorization": `Bearer ${token}`
+  },
+        body: JSON.stringify({ amount: Number(amount) })
+      });
+
+      const data = await res.json();
+      console.log("Order created:", data);
+
+      // 2. OPEN RAZORPAY POPUP
+      const options = {
+        key: data.data.key, // Razorpay key_id from backend
+        amount: data.data.amount,
+        currency: "INR",
+        name: "Test Store",
+        description: "Testing Payment",
+        order_id: data.data.orderId,
+        handler: async function (response) {
+          console.log("Payment response:", response);
+
+          // 3. VERIFY PAYMENT ON BACKEND
+          const verify = await fetch("http://localhost:5000/api/payment/verify", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              razorpay_order_id: response.razorpay_order_id,
+              razorpay_payment_id: response.razorpay_payment_id,
+              razorpay_signature: response.razorpay_signature,
+              orderId:data.data.orderId
+            })
+          });
+
+          const verifyData = await verify.json();
+          alert("✅ Payment Success! Check console/logs");
+          console.log("Verify result:", verifyData);
+        },
+        prefill: {
+          name: "Test User",
+          email: "test@example.com",
+          contact: "9999999999"
+        },
+        theme: { color: "#3399cc" }
+      };
+
+      const rzp = new Razorpay(options);
+      rzp.open();
+    }
+  </script>
+</body>
+</html>
