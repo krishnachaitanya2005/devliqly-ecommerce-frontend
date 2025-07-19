@@ -1,0 +1,76 @@
+.auth-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 60px 20px;
+	background-color: var(--secondary-color);
+}
+.auth-form-wrapper {
+	background-color: var(--white-color);
+	padding: 40px;
+	border: 1px solid var(--border-color);
+	border-radius: 10px;
+	width: 100%;
+	max-width: 450px;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+.auth-title {
+	text-align: center;
+	margin-bottom: 25px;
+	font-size: 24px;
+}
+.input-group {
+	margin-bottom: 20px;
+}
+.input-group label {
+	display: block;
+	margin-bottom: 5px;
+	font-weight: 500;
+}
+.input-group input {
+	width: 100%;
+	padding: 12px;
+	border: 1px solid var(--border-color);
+	border-radius: 5px;
+}
+.auth-button {
+	width: 100%;
+	padding: 15px;
+	background-color: var(--primary-color);
+	color: var(--white-color);
+	border: none;
+	border-radius: 5px;
+	font-size: 16px;
+	font-weight: 600;
+	cursor: pointer;
+}
+.auth-separator {
+	text-align: center;
+	margin: 20px 0;
+	color: var(--light-text-color);
+}
+.google-signin-btn {
+	width: 100%;
+	padding: 15px;
+	background-color: var(--white-color);
+	color: var(--text-color);
+	border: 1px solid var(--border-color);
+	border-radius: 5px;
+	font-size: 16px;
+	cursor: pointer;
+}
+.auth-redirect {
+	text-align: center;
+	margin-top: 20px;
+}
+.auth-redirect a {
+	color: var(--primary-color);
+	font-weight: 600;
+}
+.forgot-password {
+	display: block;
+	text-align: right;
+	margin: -10px 0 15px 0;
+	font-size: 14px;
+	color: var(--primary-color);
+}

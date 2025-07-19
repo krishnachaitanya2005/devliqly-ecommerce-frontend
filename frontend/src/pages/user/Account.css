@@ -1,0 +1,50 @@
+.page-title {
+	font-size: 28px;
+	font-weight: 600;
+	margin-bottom: 30px;
+}
+.account-container {
+	border: 1px solid var(--border-color);
+	border-radius: 8px;
+	background: var(--white-color);
+}
+.account-tabs {
+	display: flex;
+	border-bottom: 1px solid var(--border-color);
+}
+.account-tabs button {
+	padding: 15px 25px;
+	font-size: 16px;
+	font-weight: 500;
+	background: none;
+	border: none;
+	cursor: pointer;
+	border-bottom: 2px solid transparent;
+}
+.account-tabs button.active {
+	color: var(--primary-color);
+	border-bottom-color: var(--primary-color);
+}
+.account-content {
+	padding: 30px;
+}
+.profile-form {
+	display: flex;
+	gap: 40px;
+	align-items: flex-start;
+}
+.profile-picture-section {
+	flex: 0 0 150px;
+	text-align: center;
+}
+.profile-picture-section img {
+	width: 150px;
+	height: 150px;
+	border-radius: 50%;
+	object-fit: cover;
+	margin-bottom: 15px;
+	background-color: var(--secondary-color);
+}
+.profile-fields {
+	flex: 1;
+}

@@ -1,35 +1,44 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+import Header from "./components/common/Header";
+import Footer from "./components/common/Footer";
+import Home from "./pages/Home";
+import ProductListing from "./pages/ProductListing";
+import ProductDetail from "./pages/ProductDetail";
+import Cart from "./pages/Cart";
+import Checkout from "./pages/Checkout";
+import Login from "./pages/auth/Login";
+import SignUp from "./pages/auth/SignUp";
+import Account from "./pages/user/Account";
+import Orders from "./pages/user/Orders";
+import Wishlist from "./pages/user/Wishlist";
+import AdminDashboard from "./pages/Admin/AdminDashboard";
+// Import other admin pages as needed
 
 function App() {
-  const [count, setCount] = useState(0)
-
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+	return (
+		<div className="app">
+			<Header />
+			<main className="main-content">
+				<Routes>
+					<Route path="/" element={<Home />} />
+					<Route path="/products" element={<ProductListing />} />
+					<Route path="/products/:category" element={<ProductListing />} />
+					<Route path="/product/:id" element={<ProductDetail />} />
+					<Route path="/cart" element={<Cart />} />
+					<Route path="/checkout" element={<Checkout />} />
+					<Route path="/login" element={<Login />} />
+					<Route path="/signup" element={<SignUp />} />
+					<Route path="/my-account" element={<Account />} />
+					<Route path="/my-orders" element={<Orders />} />
+					<Route path="/my-wishlist" element={<Wishlist />} />
+					<Route path="/admin" element={<AdminDashboard />} />
+					{/* Add other admin routes here */}
+				</Routes>
+			</main>
+			<Footer />
+		</div>
+	);
 }
 
-export default App
+export default App;

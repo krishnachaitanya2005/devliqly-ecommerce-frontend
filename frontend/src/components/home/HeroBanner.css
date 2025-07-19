@@ -1,0 +1,56 @@
+.hero-banner-section {
+	border-radius: 20px;
+	overflow: hidden;
+	position: relative;
+}
+
+.slide-item img {
+	width: 100%;
+	height: auto;
+	display: block;
+}
+
+/* Styling for the Carousel Controls  */
+
+.slick-prev,
+.slick-next {
+	font-size: 20px !important;
+	line-height: 1 !important;
+	width: 40px !important;
+	height: 40px !important;
+	z-index: 10;
+	background-color: rgba(255, 255, 255, 0.7) !important;
+	border-radius: 50% !important;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.slick-prev {
+	left: 25px !important;
+}
+
+.slick-next {
+	right: 25px !important;
+}
+
+.slick-prev:before,
+.slick-next:before {
+	font-family: "slick" !important;
+	font-size: 20px !important;
+	line-height: 1 !important;
+	color: #333 !important;
+	opacity: 1 !important;
+}
+
+.slick-dots {
+	bottom: 15px !important;
+}
+
+.slick-dots li button:before {
+	font-size: 12px !important;
+	color: white !important;
+	opacity: 0.5 !important;
+}
+
+.slick-dots li.slick-active button:before {
+	opacity: 1 !important;
+}

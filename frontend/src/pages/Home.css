@@ -1,0 +1,16 @@
+.hero-banner {
+	background-color: var(--background-color);
+	padding: 60px 20px;
+	text-align: center;
+	margin-bottom: 40px;
+}
+.section-title {
+	font-size: 28px;
+	margin-bottom: 30px;
+	text-align: center;
+}
+.products-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+	gap: 20px;
+}

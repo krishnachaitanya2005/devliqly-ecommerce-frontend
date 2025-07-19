@@ -1,0 +1,36 @@
+.product-listing-page {
+	display: flex;
+	gap: 30px;
+	align-items: flex-start;
+}
+.filters-sidebar {
+	flex: 0 0 250px;
+}
+.filters-sidebar h3 {
+	margin-bottom: 20px;
+}
+.filter-group {
+	margin-bottom: 25px;
+}
+.filter-group h4 {
+	margin-bottom: 15px;
+}
+.filter-group ul {
+	list-style: none;
+}
+.filter-group li {
+	margin-bottom: 10px;
+}
+.products-main {
+	flex: 1;
+}
+.listing-title {
+	margin-bottom: 20px;
+	font-weight: 600;
+	text-transform: capitalize;
+}
+.products-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+	gap: 20px;
+}

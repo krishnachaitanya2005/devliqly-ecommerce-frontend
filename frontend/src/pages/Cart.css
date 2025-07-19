@@ -1,0 +1,20 @@
+.empty-state-container {
+	text-align: center;
+	padding: 80px 20px;
+}
+.empty-state-icon {
+	font-size: 80px;
+	margin-bottom: 20px;
+	color: var(--light-text-color);
+}
+.empty-state-container h2 {
+	font-size: 24px;
+	margin-bottom: 30px;
+}
+.continue-shopping-btn {
+	background-color: var(--primary-color);
+	color: var(--white-color);
+	padding: 15px 30px;
+	border-radius: 5px;
+	font-weight: 600;
+}
